@@ -7,8 +7,7 @@ pipeline
     { 
       git "https://github.com/SaiPranavReddy/OnlineShopRepo.git"
     }
-    def pompath = "
-OnlineShopSpringRESTFulSpringBootJPA/"
+    def pompath = "OnlineShopSpringRESTFulSpringBootJPA/"
 dir(pompath)
 {
     stage("mvn clean")
