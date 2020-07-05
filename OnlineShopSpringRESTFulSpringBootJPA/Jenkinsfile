@@ -12,9 +12,9 @@ node
         }
         stage("sonar analysis")
         {
-            withSonarQubeEnv("SONAR_HOME")
+            withSonarQubeEnv()
             {
-               // bat "mvn sonar:sonar"
+                bat "mvn sonar:sonar"
             }
         }
         stage("mvn package")
