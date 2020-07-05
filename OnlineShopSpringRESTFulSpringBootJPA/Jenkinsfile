@@ -1,0 +1,20 @@
+pipeline
+{
+  agent any
+  stages
+  { 
+    stage("git clone")
+    { 
+      git "https://github.com/SaiPranavReddy/OnlineShopRepo.git"
+    }
+    def pompath = "
+OnlineShopSpringRESTFulSpringBootJPA/"
+dir(pompath)
+{
+    stage("mvn clean")
+    {
+        bat "mvn clean"
+    }
+}
+  }
+}
