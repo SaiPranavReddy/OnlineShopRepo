@@ -10,5 +10,18 @@ node
         {
             bat "mvn clean"
         }
+        stage("sonar analysis")
+        {
+            withSonarQubeEnv("SONAR_HOME")
+            {
+                bat "mvn sonar:sonar"
+            }
+        }
+        stage("mvn package")
+        {
+            bat "mvn package"
+        }
+        
     }
+    
 }
