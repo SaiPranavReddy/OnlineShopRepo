@@ -13,17 +13,21 @@ pipeline
       }
     }
     def pompath = "OnlineShopSpringRESTFulSpringBootJPA/"
-dir(pompath)
-{
+
+
     stage("mvn clean")
     {
       steps{
+          dir(pompath){
+        
+        
         script{
           
         bat "mvn clean"
     }
+          }
       }
     }
-}
+
   }
 }
