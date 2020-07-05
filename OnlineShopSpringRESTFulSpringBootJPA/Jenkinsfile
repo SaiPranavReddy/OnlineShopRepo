@@ -5,14 +5,24 @@ pipeline
   { 
     stage("git clone")
     { 
+      steps{
+        script{
+        
       git "https://github.com/SaiPranavReddy/OnlineShopRepo.git"
+    }
+      }
     }
     def pompath = "OnlineShopSpringRESTFulSpringBootJPA/"
 dir(pompath)
 {
     stage("mvn clean")
     {
+      steps{
+        script{
+          
         bat "mvn clean"
+    }
+      }
     }
 }
   }
